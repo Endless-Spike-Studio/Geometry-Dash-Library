@@ -2,7 +2,7 @@
 
 namespace EndlessSpikeStudio\GeometryDashLibrary\Enums;
 
-enum SpecialSongDownloadUrls: string
+enum GeometryDashSpecialSongDownloadUrls: string
 {
 	case CUSTOM = 'CUSTOMURL';
 }
