@@ -5,7 +5,7 @@ namespace EndlessSpikeStudio\GeometryDashLibrary\Enums\Objects;
 enum GeometryDashSongObjectDefinitions: int
 {
 	public const string GLUE = '~|~';
-	public const string SEPARATOR = ':';
+	public const string SEPARATOR = '~:~';
 
 	case ID = 1;
 	case NAME = 2;
