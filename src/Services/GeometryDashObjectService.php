@@ -4,14 +4,17 @@ namespace EndlessSpikeStudio\GeometryDashLibrary\Services;
 
 class GeometryDashObjectService
 {
-	public function merge(array $object, string $glue): string
+	public function replace(string $object, string $separator, array $replacement): string
 	{
-		$objects = [];
-		foreach ($object as $key => $value) {
-			$objects[] = implode($glue, [$key, $value]);
+		$object = $this->split($object, $separator);
+
+		foreach ($replacement as $key => $value) {
+			if (isset($object[$key])) {
+				$object[$key] = $value;
+			}
 		}
 
-		return implode($glue, $objects);
+		return $this->merge($object, $separator);
 	}
 
 	public function split(string $object, string $delimiter): array
@@ -29,5 +32,15 @@ class GeometryDashObjectService
 		}
 
 		return $result;
+	}
+
+	public function merge(array $object, string $glue): string
+	{
+		$objects = [];
+		foreach ($object as $key => $value) {
+			$objects[] = implode($glue, [$key, $value]);
+		}
+
+		return implode($glue, $objects);
 	}
 }
