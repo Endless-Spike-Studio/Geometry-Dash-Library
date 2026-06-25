@@ -22,4 +22,5 @@ enum GeometryDashSongObjectDefinitions: int
 	case IS_NEW = 13;
 	case NEW_TYPE = 14;
 	case EXTRA_ARTIST_INFORMATION = 15;
+	case DOWNLOAD_SOUNDTRACK_OVERRIDE = 16;
 }
